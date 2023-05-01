@@ -20,6 +20,8 @@ RUN \
     libjpeg-turbo8 \
     python3-minimal \
     python3-openssl \
+    ffmpeg \
+    calibre \
     unrar \
     zlib1g && \
   echo "**** install app ****" && \
