@@ -13,7 +13,8 @@ RUN \
   apt-get install -y \
     libjpeg-turbo8-dev \
     python3-pip \
-    zlib1g-dev && \
+    zlib1g-dev
+RUN \
   echo "**** install runtime packages ****" && \
   apt-get install -y \
     ghostscript \
@@ -22,15 +23,19 @@ RUN \
     python3-openssl \
     ffmpeg \
     unrar \
-    zlib1g && \
+    zlib1g
+RUN \
   echo "**** install calibre packages ****" && \
   apt-get install -y \
     libfontconfig \
+    libegl1 \
+    libopengl0 \
     libgl1-mesa-glx && \
   curl -o \
     /tmp/linux-installer.sh -L \
     "https://download.calibre-ebook.com/linux-installer.sh" && \
-  bash /tmp/linux-installer.sh && \
+  bash /tmp/linux-installer.sh
+RUN \
   echo "**** install app ****" && \
   mkdir -p \
     /app/lazylibrarian && \
@@ -53,7 +58,8 @@ RUN \
   pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/ubuntu/ -U \
     apprise \
     Levenshtein \
-    Pillow && \
+    Pillow
+RUN \
   echo "**** cleanup ****" && \
   apt-get -y purge \
     libjpeg-turbo8-dev \
