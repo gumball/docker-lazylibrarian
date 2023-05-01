@@ -23,13 +23,14 @@ RUN \
     ffmpeg \
     unrar \
     zlib1g && \
-  echo "**** install calibre ckages ****" && \
+  echo "**** install calibre packages ****" && \
   apt-get install -y \
     libfontconfig \
     libgl1-mesa-glx && \
-  wget https://download.calibre-ebook.com/linux-installer.sh && \
-  chmod +x ./linux-installer.sh && \
-  bash ./linux-installer.sh && \
+  curl -o \
+    /tmp/linux-installer.sh -L \
+    "https://download.calibre-ebook.com/linux-installer.sh" && \
+  bash /tmp/linux-installer.sh && \
   echo "**** install app ****" && \
   mkdir -p \
     /app/lazylibrarian && \
