@@ -21,9 +21,15 @@ RUN \
     python3-minimal \
     python3-openssl \
     ffmpeg \
-    calibre \
     unrar \
     zlib1g && \
+  echo "**** install calibre ckages ****" && \
+  apt-get install -y \
+    libfontconfig \
+    libgl1-mesa-glx && \
+  wget https://download.calibre-ebook.com/linux-installer.sh && \
+  chmod +x ./linux-installer.sh && \
+  bash ./linux-installer.sh && \
   echo "**** install app ****" && \
   mkdir -p \
     /app/lazylibrarian && \
