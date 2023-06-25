@@ -57,6 +57,7 @@ RUN \
     wheel && \
   pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/ubuntu/ -U \
     apprise \
+    pyparsing \
     Levenshtein \
     Pillow
 RUN \
