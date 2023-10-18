@@ -40,7 +40,7 @@ jobs:
             branch=${GITHUB_REF##*/}
             sha=${GITHUB_SHA::8}
             ts=$(date +%s)
-            echo "::set-output name=BUILD_ID::build${branch}-${sha}-${ts}"    
+            echo "::set-output name=${branch}-${sha}-${ts}"    
       - name: Checkout repository
         uses: actions/checkout@v3
 
