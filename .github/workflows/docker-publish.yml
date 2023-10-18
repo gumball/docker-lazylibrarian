@@ -78,7 +78,7 @@ jobs:
             type=ref,event=tag
             type=sha
             type=raw,value=latest
-            ${{ env.IMAGE }}:${{ steps.prep.outputs.BUILD_ID }}
+            ${{ env.IMAGE }}:master${{ steps.prep.outputs.BUILD_ID }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
