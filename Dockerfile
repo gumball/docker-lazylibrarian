@@ -30,6 +30,7 @@ RUN \
     libfontconfig \
     libegl1 \
     libopengl0 \
+    libxcb-cursor0 \
     libgl1-mesa-glx && \
   curl -o \
     /tmp/linux-installer.sh -L \
