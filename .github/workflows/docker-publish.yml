@@ -76,7 +76,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
-            type=raw,value=${{ github.branch || 'pr' }}-${{ steps.prep.outputs.BUILD_ID }}
+            type=raw,value=${{ github.base_ref || 'pr' }}-${{ steps.prep.outputs.BUILD_ID }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
