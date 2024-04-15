@@ -60,6 +60,7 @@ RUN \
     apprise \
     pyparsing \
     soupsieve \
+    irc \
     Levenshtein \
     Pillow
 RUN \
